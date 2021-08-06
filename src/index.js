@@ -9,15 +9,22 @@ import movies from './reducers';
 
 const store = createStore(movies);
 console.log(store);
-console.log(store.getState());
+console.log('before action',store.getState());
 
-store.dispatch(){
-  
-}
+// store.dispatch({
+//   type:'ADD_MOVIES',
+//   state: ['m1', 'm2'],
+//   // no use of movies 
+//   // movies: [{name: 'm1'}]
+// })
+
+console.log('after action',store.getState());
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App 
+    store={store}
+    />
   </React.StrictMode>,
   document.getElementById('root')
 );

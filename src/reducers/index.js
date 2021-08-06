@@ -1,6 +1,7 @@
 
-const movies = function (state = 'Jay Swaminarayan', action) {
-    if (action === 'ADD_MOVIES') {
+const movies = function (state = [], action) {
+    if (action.type === 'ADD_MOVIES') {
+        console.log('add movies');
         return action.state;
     }
     return state;
