@@ -17,10 +17,12 @@ function App() {
 
         <div className='list'>
           {/* <MovieCard /> */}
-          {data.map((movie) => (
-            <MovieCard
-              movie={movie}
-            />
+          {data.map((movie, index) => (
+            
+          < MovieCard
+            movie={movie}
+            key={index}
+          />
           ))}
         </div>
 
