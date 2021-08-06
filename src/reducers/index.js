@@ -1,11 +1,14 @@
 import { ADD_MOVIES } from "../actions";
 
+const intialMovieState = {
+    list: [],
+    favourite: []
+}
 
-
-const movies = function (state = [], action) {
+const movies = function (state = intialMovieState, action) {
     if (action.type === ADD_MOVIES) {
         console.log('add movies');
-        return action.state;
+        return {...state, list: action.state}
     }
     return state;
 }

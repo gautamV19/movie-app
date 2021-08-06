@@ -19,13 +19,13 @@ class App extends React.Component {
       this.forceUpdate();
     })
 
-    // const data = 'm1';
     store.dispatch(addMovies(data))
 
     console.log(store.getState());
   }
+
   render() {
-    const movies = this.props.store.getState();
+    const {list, fav}= this.props.store.getState();
     return (
       <div className="App">
 
@@ -39,7 +39,7 @@ class App extends React.Component {
 
           <div className='list'>
             {/* <MovieCard /> */}
-            {movies.map((movie, index) => (
+            {list.map((movie, index) => (
               < MovieCard
                 movie={movie}
                 key={index}
