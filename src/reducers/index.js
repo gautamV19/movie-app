@@ -1,3 +1,4 @@
+import { combineReducers } from "redux";
 import { ADD_MOVIES, ADD_FAVOURITE, REM_FAVOURITE } from "../actions";
 
 const intialMovieState = {
@@ -46,4 +47,10 @@ const root = (state = intialRootState, action) => {
     }
 }
 
-export default root;
+
+//** using inbuilt method of Redux */
+export default combineReducers({
+    //** these are objects just used the short-hand */
+    movies,
+    search
+})
