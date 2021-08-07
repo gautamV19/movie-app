@@ -6,8 +6,7 @@ const intialMovieState = {
 }
 
 
-
-const movies = function (state = intialMovieState, action) {
+const movies = (state = intialMovieState, action) => {
     switch (action.type) {
         case ADD_MOVIES:
             console.log('add movies');
@@ -27,5 +26,24 @@ const movies = function (state = intialMovieState, action) {
     }
 }
 
+const intialSearchState = {
+    results: []
+}
 
-export default movies;
+const search = (state = intialSearchState, action) => {
+    return state;
+}
+
+const intialRootState = {
+    movies: intialMovieState,
+    search: intialSearchState
+}
+
+const root = (state = intialRootState, action) => {
+    return {
+        movies: movies(state.movies, action),
+        search: search(state.search, action)
+    }
+}
+
+export default root;
