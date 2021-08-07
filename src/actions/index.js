@@ -13,6 +13,7 @@ export const ADD_MOVIES = 'ADD_MOVIES';
 export const ADD_FAVOURITE = 'ADD_FAVOURITE';
 export const REM_FAVOURITE = 'REM_FAVOURITE';
 
+
 //action creators
 export function addMovies(data) {
       return {
