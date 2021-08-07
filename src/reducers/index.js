@@ -10,13 +10,13 @@ const intialMovieState = {
 const movies = (state = intialMovieState, action) => {
     switch (action.type) {
         case ADD_MOVIES:
-            console.log('add movies');
+            // console.log('add movies');
             return { ...state, list: action.state }
         case ADD_FAVOURITE:
-            console.log(action.movie.Title, 'added to Favourite movies');
+            // console.log(action.movie.Title, 'added to Favourite movies');
             return { ...state, favourite: [...state.favourite, action.movie] }
         case REM_FAVOURITE:
-            console.log(action.movie.Title, 'Removed from Favourite movies');
+            // console.log(action.movie.Title, 'Removed from Favourite movies');
             return { ...state, favourite: [...state.favourite.filter(myRemFav)] }
         default:
             break;
@@ -35,17 +35,17 @@ const search = (state = intialSearchState, action) => {
     return state;
 }
 
-const intialRootState = {
-    movies: intialMovieState,
-    search: intialSearchState
-}
-
-const root = (state = intialRootState, action) => {
-    return {
-        movies: movies(state.movies, action),
-        search: search(state.search, action)
-    }
-}
+//** old way now I am using functions */
+// const intialRootState = {
+//     movies: intialMovieState,
+//     search: intialSearchState
+// }
+// const root = (state = intialRootState, action) => {
+//     return {
+//         movies: movies(state.movies, action),
+//         search: search(state.search, action)
+//     }
+// }
 
 
 //** using inbuilt method of Redux */

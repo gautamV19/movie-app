@@ -47,13 +47,17 @@ class App extends React.Component {
   }
 
   goToFav = () => {
-    this.state.showList = false;
-    this.forceUpdate();
+    this.setState({
+      showList : false
+    })
+    // this.forceUpdate();
   }
 
   goToList = () => {
-    this.state.showList = true;
-    this.forceUpdate();
+    this.setState({
+      showList : true
+    })
+    // this.forceUpdate();
   }
 
   render() {
