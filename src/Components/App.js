@@ -21,11 +21,26 @@ class App extends React.Component {
 
     store.dispatch(addMovies(data))
 
-    console.log(store.getState());
+    // console.log(store.getState());
+  }
+
+  isMovieFav = (movie) => {
+    const { favourite } = this.props.store.getState();
+    // console.log('isMovieFav called for , ', movie);
+    const index = favourite.indexOf(movie);
+
+    if (index !== -1) {
+      // found the movie
+      // console.log('Favourite');
+      return true;
+    }
+    // console.log('Unfavourite');
+    return false;
   }
 
   render() {
-    const {list, fav}= this.props.store.getState();
+    console.log('Render ', this.props.store.getState());
+    const { list } = this.props.store.getState();
     return (
       <div className="App">
 
@@ -43,6 +58,8 @@ class App extends React.Component {
               < MovieCard
                 movie={movie}
                 key={index}
+                dispatch={this.props.store.dispatch}
+                isFavourite={this.isMovieFav(movie)}
               />
             ))}
           </div>
